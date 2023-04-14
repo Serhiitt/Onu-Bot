@@ -40,7 +40,7 @@ public class SimpleEchoBot extends TelegramLongPollingBot {
         for (int i = 0; i < list1.size(); i++){
             String strBefore = list1.get(i);
             String strAfter = list2.get(i);
-            if (strBefore.contains(GREEN) && strAfter.contains(GREEN)){
+            if ((strBefore.contains(GREEN) || strBefore.contains(YELLOW)) && (strAfter.contains(GREEN) || strAfter.contains(YELLOW))){
                 online.add(strBefore + "\n");
             }
             if ((strBefore.contains(GREEN) || strBefore.contains(YELLOW)) && strAfter.contains(RED)){
