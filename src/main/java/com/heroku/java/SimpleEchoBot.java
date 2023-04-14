@@ -43,7 +43,7 @@ public class SimpleEchoBot extends TelegramLongPollingBot {
             if (strBefore.contains(GREEN) && strAfter.contains(GREEN)){
                 online.add(strBefore + "\n");
             }
-            if (strBefore.contains(GREEN) && strAfter.contains(RED)){
+            if ((strBefore.contains(GREEN) || strBefore.contains(YELLOW)) && strAfter.contains(RED)){
                 down.add(strAfter + "\n");
             }
             if (strBefore.contains(RED) && strAfter.contains(RED)){
