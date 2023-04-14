@@ -49,10 +49,12 @@ public class SimpleEchoBot extends TelegramLongPollingBot {
             if (strBefore.contains(RED) && strAfter.contains(RED)){
                 offline.add(strBefore + "\n");
             }
-            if (strBefore.contains(YELLOW) || strAfter.contains(YELLOW)){
+            if (strBefore.contains(YELLOW)){
                 badSignal.add(strBefore + "\n");
+            } else if (strAfter.contains(YELLOW)){
+                badSignal.add(strAfter + "\n");
             }
-            if (strBefore.contains(RED) && (strAfter.contains(GREEN) || strBefore.contains(YELLOW))){
+            if (strBefore.contains(RED) && (strAfter.contains(GREEN) || strAfter.contains(YELLOW))){
                 up.add(strAfter + "\n");
             }
         }
